@@ -30,11 +30,14 @@ void playGame(int dieThrow, int wager) {
     else{
         point = dieThrow;
         int secondThrow = 0;
+        cout << "Point is " << point<< "\n";
 
 ;        while (secondThrow != point) {
 
             if (secondThrow != 7 && secondThrow != point) {
+                
                 secondThrow = die();
+                cout << "player rolled " << dieOne << " + " << dieTwo << " = " << dieOne + dieTwo << "\n";
             }
             
             if (secondThrow == 7) {
