@@ -11,34 +11,36 @@ int die() {
 
 void playGame(int dieThrow) {
     int point;
+    cout << "Player threw: "<< dieThrow << " \n\n";
 
     if (dieThrow == 7 || dieThrow == 11) {
-        cout << "Player wins!\n";
-        point = dieThrow;
+        cout << "Player wins!: " << dieThrow << " \n";
     }
-    if (dieThrow == 2 || dieThrow == 3 || dieThrow == 12) {
-        cout << "Craps!\n";
-        point = dieThrow;
+    else if (dieThrow == 2 || dieThrow == 3 || dieThrow == 12) {
+        cout << "Craps!: " << dieThrow << " \n";
     }
     else{
         point = dieThrow;
-        int secondThrow = die();
-
-       
+        int secondThrow = 0;
 
 ;        while (secondThrow != point) {
-            cout << "Rolling again!\n";
-            secondThrow = die();
 
+            if (secondThrow != 7 && secondThrow != point) {
+                cout << "Rolling again!\n";
+                secondThrow = die();
+                cout << "Player threw: " << secondThrow << " \n";
+            }
+            
             if (secondThrow == 7) {
-                cout << "Player loses!\n";
+                cout << "Player loses!: " << secondThrow << " \n";
+                break;
             }
 
             if (secondThrow == point) {
-                cout << "Player Wins!\n";
+                cout << "Player Wins!: " << secondThrow << " \n";
+                break;
             }
 
-            
         }
 
     }
@@ -56,7 +58,6 @@ int main() {
          playGame(die());
         }
     }
-
     
     return 0;
 }
