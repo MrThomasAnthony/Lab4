@@ -21,12 +21,12 @@ void playGame(int dieThrow, int wager) {
     if (dieThrow == 7 || dieThrow == 11) {
         cout << "Player wins!: " << dieThrow << " \n";
         credits += wager;
-        cout << "\nYou won " << wager << " credits. Your new balance is " << credits << " credits";
+        cout << "\nYou won " << wager << " credits";
     }
     else if (dieThrow == 2 || dieThrow == 3 || dieThrow == 12) {
         cout << "Player loses!: " << dieThrow << " \n";
         credits -= wager;
-        cout << "\nYou lost " << wager << " credits. Your new balance is " << credits << " credits";
+        cout << "\nYou lost " << wager << " credits.";
     }
     else {
         point = dieThrow;
@@ -40,14 +40,14 @@ void playGame(int dieThrow, int wager) {
             if (secondThrow == 7) {
                 cout << "Player loses!: " << secondThrow << " \n";
                 credits -= wager;
-                cout << "\nYou lost " << wager << " credits. Your new balance is " << credits << " credits";
+                cout << "\nYou lost " << wager << " credits.";
                 break;
             }
 
             if (secondThrow == point) {
                 cout << "Player wins!: " << secondThrow << " \n";
                 credits += wager;
-                cout << "\nYou won " << wager << " credits. Your new balance is " << credits << " credits";
+                cout << "\nYou won " << wager << " credits.";
                 break;
             }
         }

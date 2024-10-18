@@ -27,6 +27,14 @@ int main() {
 
         playGame(die(), wager);
 
+        if (credits == 0) {
+            cout << " You are out of credits - game over!\n";
+            break;
+        }
+        else {
+            cout << "Your new balance is " << credits << " credits\n";
+        }
+
         cout << "\nPlay again (y/n)? \n";
         cin >> ans;
 
